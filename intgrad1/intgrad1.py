@@ -1,5 +1,5 @@
 import numpy as np
-import scipy
+from scipy.interpolate import CubicSpline
 
 
 def intgrad1(fx,dx=1,f1=0):
@@ -85,7 +85,7 @@ def intgrad1(fx,dx=1,f1=0):
 
     # case 2
     # integrate a spline model
-    pp = scipy.interpolate.CubicSpline(xp,fx)
+    pp = CubicSpline(xp,fx)
     c = pp.c.T
     fhat = dx*(c[:,3] + dx*(c[:,2]/2 + dx*(c[:,1]/3 + dx*c[:,0]/4)))
     fhat = f1+np.insert(np.cumsum(fhat),0,0)
