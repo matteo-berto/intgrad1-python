@@ -2,7 +2,7 @@ import numpy as np
 import scipy
 
 
-def intgrad1(fx,dx=1,f1=1):
+def intgrad1(fx,dx=1,f1=0):
     """
     Author: Matteo Berto
     Institution: University of Padua (Università degli Studi di Padova)
